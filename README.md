@@ -4,26 +4,26 @@ Python 3.6
 ## Install
 Install the latest code from GitHub.
 
-    git clone https://github.com/Zsaknadrag/interpretability-word-embedding
+    git clone https://github.com/Zsaknadrag/interpretability
     cd interpretability-word-embedding
     pip install -r requirements.txt
 
 Download the sparse [glove][1] and [contextual][2] (bert) embeddings and the [assertion][3] files of the knowledge bases.
 ## Preprocess
-
-	cd src
-	
 For the preprocessing of a gzipped embedding:
 	
+	cd src
 	python ./preprocess/preprocess_sparse_embedding --embedding <path_to_gzipped_embedding>
 	
 To preprocess a knowledge base (and its assertions) run:
 
+	cd src
 	python ./preprocess/preprocess_cnet --kb <path_to_json_assertion>
 	
 ## Assign knowledge base concepts to embedding dimensions.
+	Filter word embedding to contain words that are also present in the vocabulary of the knowledge base.
     cd src
-
+	python ./alignments/filter_embedding --embedding <path_to_npz_embedding> --vocabulary <path_to_pickled_vocabulary>
 
 
 

@@ -4,8 +4,8 @@ import numpy as np
 import scipy.sparse as sp
 import pickle
 import sys
-sys.path.append('../')
-import utils
+sys.path.append('../../')
+import src.utils as utils
 
 FREQUENCY_LIMIT = 400000
 class Embedding(object):

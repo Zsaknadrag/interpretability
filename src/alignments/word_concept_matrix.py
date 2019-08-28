@@ -1,9 +1,9 @@
 import argparse
 import os
 import pickle
-
-import utils
-
+import sys
+sys.path.append('../../')
+import src.utils as utils
 import scipy.sparse as sp
 from collections import defaultdict, OrderedDict
 

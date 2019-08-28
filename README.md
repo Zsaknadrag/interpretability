@@ -45,7 +45,7 @@ Run the alignment based on NPPMI:
 	
 	python ./alignments/alignment_NPPMI.py --embedding <path_to_filtered_npz_embedding>
 
-Evaluate alignments. Input pickled files are in the 'results/nppmi/max_concepts' folder.
+Evaluate alignments. Input pickled files are in the `results/nppmi/max_concepts` folder.
 
 	pythn ./alignments/evaluation.py --alingment <path_to_pickled_alignment>
 	

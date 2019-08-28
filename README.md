@@ -33,6 +33,14 @@ Based on the knowledge base present druing filter, generate a word-concept matri
 
 	python ./alignments/word_concept_matrix --embedding <path_to_filtred_npz_embedding>
 	
+For the (TAB and TAC) evaluations split train and test sets for each concept:
+
+	python ./alignments/train_test_split --embedding <path_to_filtred_npz_embedding>
+
+Compute meta-concepts based on word-concept matrix:
+
+	python ./alignments/meta_concepts --concepts <path_to_word_concept_matrix>
+	
 [1]: http://rgai.inf.u-szeged.hu/~berend/interpretability/sparse_glove_extended/
 [2]: http://rgai.inf.u-szeged.hu/~berend/interpretability/contextual/
 [3]: https://drive.google.com/open?id=19APSLGWn1IGAaWkpg9x-PoJo-fHI0SvS

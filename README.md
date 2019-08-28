@@ -29,7 +29,7 @@ Filter word embedding to contain words that are also present in the vocabulary o
 
 	python ./alignments/filter_embedding --embedding <path_to_npz_embedding> --vocabulary <path_to_pickled_vocabulary>
 
-Based on the knowledge base present druing filter, generate a word-concept matrix:
+Then based on the knowledge base present during filter, generate a word-concept matrix:
 
 	python ./alignments/word_concept_matrix --embedding <path_to_filtred_npz_embedding>
 	

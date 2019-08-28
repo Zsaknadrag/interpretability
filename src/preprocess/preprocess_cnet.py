@@ -242,7 +242,7 @@ class Thresholder(object):
 
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('--kb', required=True, type=str, help='Path to json assertion file as knowledge base.')
+    parser.add_argument('--conceptnet', required=True, type=str, help='Path to ConceptNet csv.')
     parser.add_argument('--top50000', required=False, type=str,
                         default='', help='Path to pickled vocabulary file containing most frequent 50000 words.')
     parser.add_argument('--language', required=False, type=str,
@@ -251,7 +251,7 @@ def main():
 
     args = parser.parse_args()
     print("The command line arguments were ", args)
-    pp = Preprocessor(args.kb, args.language, args.top50000)
+    pp = Preprocessor(args.conceptnet, args.language, args.top50000)
     print("Saving concept data...")
     pp.save_concept_data()
     print("Getting concept data...")

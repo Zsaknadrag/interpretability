@@ -20,7 +20,8 @@ To preprocess a knowledge base (and its assertions) run:
 	cd src
 	python ./preprocess/preprocess_cnet --kb <path_to_json_assertion>
 	
-## Assign knowledge base concepts to embedding dimensions.
+## Assign knowledge base concepts to sparse embedding dimensions.
+Make sure knowledge base and sparse embedding are preprocessed.
 
 	cd src
 	

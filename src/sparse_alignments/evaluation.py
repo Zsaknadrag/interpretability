@@ -3,8 +3,9 @@ import os
 import numpy as np
 import pickle
 import json
-import utils
-
+import sys
+sys.path.append('../')
+import src.utils as utils
 from scipy.stats import hypergeom
 import scipy.sparse as sp
 from scipy.spatial.distance import cosine

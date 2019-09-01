@@ -483,9 +483,9 @@ class Aligner(object):
 
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('--sparse-matrix', required=True, type=str,
+    parser.add_argument('--dense-matrix', required=True, type=str,
                         default='../data/dense_matrices/word_base/embeddings/filtered/glove.42B.400k.300d.txt_f_conceptnet56_top50000.p',
-                        help='Path to npz format sparse matrix')
+                        help='Path to pickled sparse matrix')
     parser.add_argument('--concept-file', required=False, type=str,
                         default='../data/conceptnet/assertions/propagated_animals_conceptnet56_assertions.json',
                         help='Path to short ConceptNet json file, unncecessary.')
@@ -502,12 +502,12 @@ def main():
                         help='')
     args = parser.parse_args()
     print("Command line arguments were ", args)
-    # cm = Aligner(args.sparse_matrix, args.concept_file, args.cont_sparse, args.thd, args.language, args.longname, args.rel)
+    # cm = Aligner(args.dense_matrix, args.concept_file, args.cont_sparse, args.thd, args.language, args.longname, args.rel)
     # cm.calculate_NPPMI()
     # cm.get_alignments()
     # cm.max_max_alignment()
     for thd in [30]:#[40, 30, 20, 10, 5]:#0
-        cm = Aligner(args.sparse_matrix, args.concept_file, args.cont_sparse, thd, args.language, args.longname, args.rel)
+        cm = Aligner(args.dense_matrix, args.concept_file, args.cont_sparse, thd, args.language, args.longname, args.rel)
         cm.calculate_NPPMI()
         cm.get_alignments()
 

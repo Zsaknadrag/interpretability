@@ -91,7 +91,7 @@ To process the train and eval folders (`train_dir` contains the xml and key file
 	cd src
 	python ./contextual/process_xml.py --trainEmbedding <path_to_preprocessed_train_embedding> --trainDir <train_dir> --evalEmbedding <path_to_preprocessed_eval_embedding> --evalDir <eval_dir>
 	
-Then, to compute inter-intra distance ratio with:
+Then, to compute inter-intra distance ratio:
 	
 	python ./contextual/inter-intra_distance.py --embedding <path_to_preprocessed_train_embedding>
 	

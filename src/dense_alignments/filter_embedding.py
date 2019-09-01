@@ -2,8 +2,9 @@ import argparse
 import os
 import numpy as np
 import pickle
+import sys
 sys.path.append('../')
-import src.steps.utils as utils
+import src.utils as utils
 
 FREQUENCY_LIMIT = 400000
 class Embedding(object):

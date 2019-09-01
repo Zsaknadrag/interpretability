@@ -6,8 +6,9 @@ import numpy as np
 import random as rd
 import scipy.sparse as sp
 from collections import defaultdict
+import sys
 sys.path.append('../')
-import src.steps.utils as utils
+import src.utils as utils
 
 TRAIN = 0.6
 TEST = 1.0 - TRAIN

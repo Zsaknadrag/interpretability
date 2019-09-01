@@ -9,7 +9,7 @@ from nltk.tokenize import word_tokenize
 from collections import defaultdict, OrderedDict
 
 sys.path.append('../../')
-import utils
+import src.utils
 
 
 STOPWORDS = set(stopwords.words('english'))

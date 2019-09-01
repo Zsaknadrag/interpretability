@@ -2,11 +2,12 @@ import gzip
 import argparse
 import os
 import numpy as np
-import utils
 import scipy.sparse.linalg
 import scipy.sparse as sp
 import pickle
 from collections import defaultdict, OrderedDict
+sys.path.append('../../')
+import src.utils as utils
 
 class SparseEmbedding(object):
     """

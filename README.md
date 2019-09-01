@@ -67,12 +67,12 @@ Evaluate alignments. Input pickled files are in the `results/nppmi/max_concepts`
 
 Similarly to sparse embeddings run the following for dense embeddings:
 
-			python ./dense_alignments/filter_embedding.py --embedding <path_to_pickled_embedding> --vocabulary <path_to_pickled_vocabulary>
-			python ./dense_alignments/word_concept_matrix.py --dense-matrix <path_to_filtred_npz_embedding>
-			python ./dense_alignments/train_test_split.py --embedding <path_to_filtred_npz_embedding>
-			python ./dense_alignments/meta_concepts.py --concept <path_to_word_concept_matrix>
-			python ./dense_alignments/alignment_NPPMI.py --embedding <path_to_filtered_pickled_embedding>
-			python ./sparse_alignments/evaluation.py --alignment <path_to_pickled_alignment>
+	python ./dense_alignments/filter_embedding.py --embedding <path_to_pickled_embedding> --vocabulary <path_to_pickled_vocabulary>
+	python ./dense_alignments/word_concept_matrix.py --dense-matrix <path_to_filtred_npz_embedding>
+	python ./dense_alignments/train_test_split.py --embedding <path_to_filtred_npz_embedding>
+	python ./dense_alignments/meta_concepts.py --concept <path_to_word_concept_matrix>
+	python ./dense_alignments/alignment_NPPMI.py --embedding <path_to_filtered_pickled_embedding>
+	python ./sparse_alignments/evaluation.py --alignment <path_to_pickled_alignment>
 
 ## Contextual embeddings
 

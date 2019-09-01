@@ -31,6 +31,13 @@ To preprocess [dense glove embeddings][4] run:
 
 This will result in pickled embedding matrix and word indexing files in the `data` directory.	
 	
+To preprocess [contextual sparse embeddings][5] run:
+
+	cd src
+	python ./preprocess/preprocess_contextual --embedding <path_to_contextual_gzipped_embedding>
+
+This will result in pickled embedding matrix and word indexing files in the `data` directory.	
+
 ## Assign knowledge base concepts to sparse embedding dimensions
 Make sure knowledge base and sparse embedding are preprocessed.
 
@@ -67,6 +74,7 @@ Evaluate alignments. Input pickled files are in the `results/nppmi/max_concepts`
 
 Similarly to sparse embeddings run the following for dense embeddings:
 
+	cd src
 	python ./dense_alignments/filter_embedding.py --embedding <path_to_pickled_embedding> --vocabulary <path_to_pickled_vocabulary>
 	python ./dense_alignments/word_concept_matrix.py --dense-matrix <path_to_filtred_npz_embedding>
 	python ./dense_alignments/train_test_split.py --embedding <path_to_filtred_npz_embedding>
@@ -76,8 +84,22 @@ Similarly to sparse embeddings run the following for dense embeddings:
 
 ## Contextual embeddings
 
+Sparsified contextual embeddings are investigated following the work of [Ragnato et al (2017)][6]. The framework containing the training and evaluation data can be found [here][7]. Training and evaluation embeddings should be preprocessed.
+
+To process the train and eval folders (`train_dir` contains the xml and key files, `eval_dir` contains the directories containing xml and key files):
+
+	cd src
+	python ./contextual/process_xml.py --trainEmbedding <path_to_preprocessed_train_embedding> --trainDir <train_dir> --evalEmbedding <path_to_preprocessed_eval_embedding> --evalDir <eval_dir>
+	
+Then, to compute inter-intra distance ratio with:
+	
+	python ./contextual/inter-intra_distance.py --embedding <path_to_preprocessed_train_embedding>
+	
 	
 [1]: http://rgai.inf.u-szeged.hu/~berend/interpretability/sparse_glove_extended/
 [2]: http://rgai.inf.u-szeged.hu/~berend/interpretability/contextual/
 [3]: https://drive.google.com/open?id=19APSLGWn1IGAaWkpg9x-PoJo-fHI0SvS
 [4]: https://nlp.stanford.edu/projects/glove/
+[5]: http://rgai.inf.u-szeged.hu/~berend/interpretability/contextual/
+[6]: https://www.aclweb.org/anthology/E17-1010/
+[7]: http://lcl.uniroma1.it/wsdeval/home
